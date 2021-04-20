@@ -31,7 +31,7 @@ class _rpayState extends State<rpay> {
 
   void openCheckout() {
     var options = {
-      "key": "rzp_test_F8hTb3aLpWlugx",
+      "key": "",
       "amount": num.parse(textEditingController.text) * 100,
       "name": "Sample App",
       "description": "Payment for the some random product",
