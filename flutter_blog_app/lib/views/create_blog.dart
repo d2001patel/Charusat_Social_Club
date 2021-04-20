@@ -117,11 +117,11 @@ class _CreateBlogState extends State<CreateBlog> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "Flutter",
+              "Upload",
               style: TextStyle(fontSize: 22),
             ),
             Text(
-              "Blog",
+              "Feed",
               style: TextStyle(fontSize: 22, color: Colors.blue),
             )
           ],
@@ -144,70 +144,73 @@ class _CreateBlogState extends State<CreateBlog> {
               alignment: Alignment.center,
               child: CircularProgressIndicator(),
             )
-          : Container(
-              child: Column(
-                children: <Widget>[
-                  SizedBox(
-                    height: 10,
-                  ),
-                  GestureDetector(
-                      onTap: () {
-                        getImage();
-                      },
-                      child: selectedImage != null
-                          ? Container(
-                              margin: EdgeInsets.symmetric(horizontal: 16),
-                              height: 170,
-                              width: MediaQuery.of(context).size.width,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(6),
-                                child: Image.file(
-                                  selectedImage,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            )
-                          : Container(
-                              margin: EdgeInsets.symmetric(horizontal: 16),
-                              height: 170,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(6)),
-                              width: MediaQuery.of(context).size.width,
-                              child: Icon(
-                                Icons.add_a_photo,
-                                color: Colors.black45,
-                              ),
-                            )),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 16),
-                    child: Column(
-                      children: <Widget>[
-                        TextField(
-                          decoration: InputDecoration(hintText: "Author Name"),
-                          onChanged: (val) {
-                            authorName = val;
-                          },
-                        ),
-                        TextField(
-                          decoration: InputDecoration(hintText: "Title"),
-                          onChanged: (val) {
-                            title = val;
-                          },
-                        ),
-                        TextField(
-                          decoration: InputDecoration(hintText: "Desc"),
-                          onChanged: (val) {
-                            desc = val;
-                          },
-                        )
-                      ],
+          : SingleChildScrollView(
+              child: Container(
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(
+                      height: 10,
                     ),
-                  )
-                ],
+                    GestureDetector(
+                        onTap: () {
+                          getImage();
+                        },
+                        child: selectedImage != null
+                            ? Container(
+                                margin: EdgeInsets.symmetric(horizontal: 16),
+                                height: 170,
+                                width: MediaQuery.of(context).size.width,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(6),
+                                  child: Image.file(
+                                    selectedImage,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              )
+                            : Container(
+                                margin: EdgeInsets.symmetric(horizontal: 16),
+                                height: 170,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(6)),
+                                width: MediaQuery.of(context).size.width,
+                                child: Icon(
+                                  Icons.add_a_photo,
+                                  color: Colors.black45,
+                                ),
+                              )),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 16),
+                      child: Column(
+                        children: <Widget>[
+                          TextField(
+                            decoration:
+                                InputDecoration(hintText: "Author Name"),
+                            onChanged: (val) {
+                              authorName = val;
+                            },
+                          ),
+                          TextField(
+                            decoration: InputDecoration(hintText: "Title"),
+                            onChanged: (val) {
+                              title = val;
+                            },
+                          ),
+                          TextField(
+                            decoration: InputDecoration(hintText: "Desc"),
+                            onChanged: (val) {
+                              desc = val;
+                            },
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
     );

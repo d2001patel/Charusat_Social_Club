@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blog_app/services/crud.dart';
 import 'package:flutter_blog_app/views/create_blog.dart';
 import 'package:flutter_blog_app/widgets/custom_button.dart';
+import 'package:flutter_blog_app/views/MapView2.dart';
+import 'package:flutter_blog_app/views/RazorPay.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -88,6 +90,20 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => CreateBlog()));
+              },
+            ),
+            ElevatedButton(
+              child: Text('MAP'),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MapView2()));
+              },
+            ),
+            ElevatedButton(
+              child: Text('PAYMENT'),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => rpay()));
               },
             )
             /*FloatingActionButton(
